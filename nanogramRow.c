@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+#include<stdlib.h>
 
 int main(){
 
@@ -7,12 +8,20 @@ int main(){
     int saisiSize=0;
     int tmp=0;
 
+    int *p=&saisi[0];
+
+  
+
     while(tmp==0 || tmp==1){
         printf("enter 1 or 0 (other number to stop): ");
         scanf("%d",&saisi[saisiSize]);
         tmp=saisi[saisiSize];
         saisiSize++;
     }
+  p=(int*)malloc(saisiSize*sizeof(int));
+
+  int size=sizeof(saisi)/sizeof(saisi[0]);
+    printf("%d saisi size\n",size);
 
     int counterOfOne = 0;
     int oneRows[100];
